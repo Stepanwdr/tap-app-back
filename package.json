@@ -1,0 +1,35 @@
+{
+  "name": "casino-back",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"nodemon -r esm -r dotenv/config -r ./bin/www.js\" \"npm:tunnel\"",
+    "migrate": "node -r esm -r dotenv/config bin/migrate.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.5.0",
+    "esm": "^3.2.25",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "ioredis": "^5.6.1",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "morgan": "~1.9.1",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7",
+    "socket.io": "^4.8.1",
+    "sqlite3": "^5.1.7",
+    "telegraf": "^4.16.3",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10"
+  }
+}
