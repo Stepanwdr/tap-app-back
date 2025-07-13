@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "\"nodemon -r esm -r dotenv/config -r ./bin/www.js\" \"npm:tunnel\"",
+    "start": "\"node  -r esm -r dotenv/config -r ./bin/www.js\" \"npm:tunnel\"",
     "migrate": "node -r esm -r dotenv/config bin/migrate.js"
   },
   "dependencies": {
