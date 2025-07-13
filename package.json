@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "concurrently \"nodemon -r esm -r dotenv/config -r ./bin/www.js\" \"npm:tunnel\"",
+    "start": "\"nodemon -r esm -r dotenv/config -r ./bin/www.js\" \"npm:tunnel\"",
     "migrate": "node -r esm -r dotenv/config bin/migrate.js"
   },
   "dependencies": {
@@ -26,7 +26,8 @@
     "socket.io": "^4.8.1",
     "sqlite3": "^5.1.7",
     "telegraf": "^4.16.3",
-    "validatorjs": "^3.22.1"
+    "validatorjs": "^3.22.1",
+    "vercel-node-server": "^2.2.1"
   },
   "devDependencies": {
     "concurrently": "^9.2.0",
