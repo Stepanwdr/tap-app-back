@@ -12,7 +12,8 @@ const Users = sequelize.define('users',
   firstName: DataTypes.STRING,
   username: DataTypes.STRING,
   score:DataTypes.INTEGER,
-  coin:DataTypes.BIGINT,
+  coin:DataTypes.INTEGER,
+  avatar: DataTypes.STRING
 },
   {
   timestamps: true,

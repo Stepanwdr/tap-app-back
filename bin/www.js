@@ -16,7 +16,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: 'https://interview-sh-costume-nursery.trycloudflare.com', // или твой порт фронта
+    origin: 'https://ira-associated-precipitation-kelkoo.trycloudflare.com', // или твой порт фронта
     methods: ["GET", "POST"]
   }
 });

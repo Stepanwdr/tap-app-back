@@ -2,12 +2,13 @@ import redis from "../services/redis/redis";
 
 const scoreSocket = (socket) => {
   socket.on("incrementScore", async ({ tgUserId }) => {
+    console.log(tgUserId)
     if (!tgUserId) {
       return socket.emit("errorMessage", "Отсутствует идентификатор пользователя");
     }
     try {
       // Инкремент счёта в Redis
-      const newScore = await redis.incr(`score:${tgUserId}`);
+      const newScore = await redis.incr(`coin:${tgUserId}`);
       // Отправляем обновлённый счёт клиенту
     } catch (error) {
       console.error("Ошибка инкремента:", error);

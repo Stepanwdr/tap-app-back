@@ -6,12 +6,13 @@ class UsersController {
   // Пользователь заходит через Telegram Mini App
   static authFromTelegram = async (req, res, next) => {
     try {
-      const { tgUserId, firstName, username, score } = req.body;
+      const { tgUserId, firstName, username, coin, avatar = '' } = req.body;
       validate(req.body, {
         tgUserId: 'required|integer',
         firstName: 'string',
         username: 'string',
-        score: 'integer'
+        coin: 'integer',
+        avatar: 'string'
       }).throw();
 
       let user = await Users.findOne({
@@ -23,12 +24,13 @@ class UsersController {
           tgUserId,
           firstName,
           username,
-          score
+          coin,
+          avatar
         });
       }
 
       const data= {
-          user:user.dataValues
+          user: user.dataValues
       }
       res.json(data);
     } catch (e) {
@@ -37,8 +39,7 @@ class UsersController {
   };
   static changeScore = async (req, res, next) => {
     try {
-      const { tgUserId, score } = req.body;
-
+      const { tgUserId, coin } = req.body;
       // Ищем пользователя
       const user = await Users.findOne({ where: { tgUserId } });
 
@@ -47,7 +48,7 @@ class UsersController {
       }
 
       // Обновляем score
-      user.score = score;
+      user.coin = coin;
       await user.save();
 
       res.json({
