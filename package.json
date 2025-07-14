@@ -2,7 +2,6 @@
   "name": "tap-app-back",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "start": "node -r dotenv/config bin/www.js",
     "migrate": "node -r esm -r dotenv/config bin/migrate.js"
