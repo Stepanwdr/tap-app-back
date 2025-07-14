@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node -r dotenv/config bin/www.js",
+    "start": "node dotenv/config bin/www.js",
     "migrate": "node -r esm -r dotenv/config bin/migrate.js"
   },
   "dependencies": {
